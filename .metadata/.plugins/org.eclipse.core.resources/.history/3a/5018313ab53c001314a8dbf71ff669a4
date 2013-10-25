@@ -1,0 +1,116 @@
+
+
+public class WordSearch
+{
+	/** 2D array instance variable*/
+	private String twoDimArr[][];
+	
+	/** constructor used to set the number of rows and columns in the 2D array
+		* @param row
+		* @param col*/
+	private int rows;
+	private int columns;
+	public WordSearch(int row, int col)
+	{
+		rows = row;
+		columns = col;
+		twoDimArr = new String[rows][columns];
+	}
+	
+	/** method to set an element in the 2D array
+		* @param s which is the value to store in the 2D array
+		* @param row the row to use
+		* @param col the column to use*/
+	public void setSpot(String s, int row, int col)
+	{
+		twoDimArr[row][col] = s;
+	}
+	
+	/** methods to check for the word in the 2D array
+		* @param word the word to search for
+		* @return return true or false*/
+	public boolean inGrid(String s)
+	{
+		String rowHolder = "";
+		////////////////////////////////////////////////////////////////// Normal Strings Down by Row
+		for(int w = 0; w < rows; w++){
+			for(int x = 0; x < columns; x++){
+				rowHolder += twoDimArr[w][x];
+				//System.out.println(rowHolder);
+				if(rowHolder.length() > columns - 1){
+					if (rowHolder.indexOf(s) > 0){
+						//System.out.println(s + " is in " + rowHolder);
+						return true;
+					}
+					rowHolder = "";
+				}
+			}		
+		}
+		////////////////////////////////////////////////////////////////// Reverse Strings Down by Row
+		rowHolder = "";
+		String otherRowHolder = "";
+		for(int w = 0; w < rows; w++){
+			for(int x = 0; x < columns; x++){
+				rowHolder += twoDimArr[w][x];
+				if(rowHolder.length() > columns - 1){
+					for(int z = rowHolder.length() - 1; z > 0; z--){
+						otherRowHolder += rowHolder.charAt(z);
+					}
+					if (otherRowHolder.indexOf(s) > 0){
+						//System.out.println(s + " is in " + otherRowHolder);
+						return true;
+					}
+					rowHolder = "";
+					otherRowHolder = "";
+				}
+				otherRowHolder = "";
+			}		
+		}
+		////////////////////////////////////////////////////////////////// Normal Strings Across by Column
+		rowHolder = "";
+		for(int w = 0; w < rows; w++){
+			for(int x = 0; x < columns; x++){
+				rowHolder += twoDimArr[x][w];
+				
+				if(rowHolder.length() > columns - 1){
+					if (rowHolder.indexOf(s) > 0){
+						//System.out.println(s + " is in " + rowHolder);
+						return true;
+					}
+					rowHolder = "";
+				}
+			}		
+		}
+		////////////////////////////////////////////////////////////////// Reverse Strings Across by Column
+		rowHolder = "";
+		otherRowHolder = "";
+		for(int w = 0; w < rows; w++){
+			for(int x = 0; x < columns; x++){
+				rowHolder += twoDimArr[x][w];
+				if(rowHolder.length() > columns - 1){
+					for(int z = rowHolder.length() - 1; z > 0; z--){
+						otherRowHolder += rowHolder.charAt(z);
+					}
+					if (otherRowHolder.indexOf(s) > 0){
+						//System.out.println(s + " is in " + otherRowHolder);
+						return true;
+					}
+					
+					rowHolder = "";
+					otherRowHolder = "";
+				}
+				otherRowHolder = "";
+			}	
+		}
+		//////////////////////////////////////////////////////////////////
+		//System.out.println(s + " is not in the puzzle");
+		return false;
+	}
+	
+	/** toString method
+		* @return String containing all elements in the 2D array*/
+	public String toString()
+	{
+		return "" + twoDimArr;
+	}
+}
