@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class VigenereRunner
+{
+	public static void main(String[] args)
+	{
+		//instantiate a Scanner object
+		
+		//prompt the user for the text to encrypt
+		
+		//assign user input to a variable
+		
+		//prompt the user for a keyword to use
+		
+		//assign user input to a variable
+		
+		//instantitate a Vigenere object and pass in the user input
+		
+		//text your program
+	}
+}

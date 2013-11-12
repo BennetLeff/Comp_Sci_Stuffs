@@ -96,7 +96,11 @@ public class Song
 		// leave this here
 		// check equality using the s reference
 		Song s = (Song) obj;
-		return true;
+		if (s.getTitle() == title && s.getAlbum() == album &&
+			s.getArtist() == artist && s.getLength() == songLength)	
+			return true;
+		else
+			return false;
 	}
 
 	/** toString() method to get the instance variables

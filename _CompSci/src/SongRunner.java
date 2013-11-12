@@ -3,7 +3,7 @@ public class SongRunner
 	public static void main(String[] args)
 	{
 		// create object using default constructor
-		Song test1 = new Song();
+		Song test1 = new Song("newTitle", "newAlbum", "newArtist", 500);
 		// test the default constructor which also tests the toString() method
 		System.out.println(test1);
 		// create object using the initialization constructor
@@ -32,5 +32,6 @@ public class SongRunner
 		System.out.println(test1.equals(test2));
 		//call the equals method on equal objects
 		System.out.println(test2.equals(test3));
+
 	}
 }

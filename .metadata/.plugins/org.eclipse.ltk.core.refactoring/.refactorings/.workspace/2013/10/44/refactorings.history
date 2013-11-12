@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;Viginere Cipher&apos; to &apos;Vigenere Cipher&apos;&#x0D;&#x0A;- Original element: &apos;Viginere Cipher&apos;&#x0D;&#x0A;- Renamed element: &apos;Viginere Cipher&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Viginere Cipher&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Viginere Cipher" name="Vigenere Cipher" references="true" stamp="1383233063271" version="1.0"/>
+</session>
