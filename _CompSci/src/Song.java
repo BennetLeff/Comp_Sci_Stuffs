@@ -106,10 +106,7 @@ public class Song
 	/** toString() method to get the instance variables
 	* @return return a String containing the instance variablees*/
 	public String toString() {
-		return "Song [title: " + title + ", album: " + album + ", artist: "
-				+ artist + ", songLength: " + songLength + "]";
+		return "title: " + title + " album: " + album + " artist: "
+				+ artist + " songLength: " + songLength;
 	}
-	
-
-
 }

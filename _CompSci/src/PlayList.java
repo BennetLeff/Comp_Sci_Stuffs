@@ -11,7 +11,7 @@ public class PlayList
 		// I would recommend setting the length to 1
 		list = new Song[1];
 		// Then make sure you add 1 song to the list in index 0
-		list[0] = new Song("Song Title", "Song Album", "Artist", 180);
+		list[0] = new Song("Song Title", "Song Album", "Artist", 0);
 	}
 
 	/** initialization constructor used to set the instance variables
@@ -28,13 +28,14 @@ public class PlayList
 	public void setList(int x)
 	{
 		// this should set the length of the playlist
-		
+		list = new Song[x];
 	}
 	
 	/** accessor method to get the entire playlist in a String
 		* @return return the entire playslist as a Song[] array*/
 	public Song[] getList()
 	{
+		return list;
 		
 	}
 	
@@ -47,7 +48,18 @@ public class PlayList
 		   if it is not big enough you will need to create a large enough array
 			   and then transfer the songs to the new array before assigning the new
 			   array back to the list array*/
+		int count = 0;
 		
+		if (list.length > x)
+			list[x] = s;
+		else {
+			Song temp[] = new Song[x + 1];
+			for (Song s1 : list){
+				temp[count] = s1;
+				count++;
+			}
+			list = temp;
+		}
 	}
 	
 	/** method to get a song from the playlist
@@ -55,6 +67,7 @@ public class PlayList
 		* @return return the song in the position specified*/
 	public Song getSong(int x)
 	{
+		return list[x];
 		
 	}
 	
@@ -62,6 +75,7 @@ public class PlayList
 		* @return return the number of songs in the playlist*/
 	public int numSongs()
 	{
+		return list.length;
 		
 	}
 	
@@ -71,7 +85,12 @@ public class PlayList
 	{
 		/* before accessing the length of an individual song you should ensure that the 
 				song reference is not null*/
+		int totalLength = 0;	
+		for (Song x : list)
+			if (x != null)
+				totalLength += x.getLength();
 		
+		return totalLength;
 	}
 	
 	/** method to remove any songs from the specified artist
@@ -82,7 +101,20 @@ public class PlayList
 				occurances of that artist. 
 				Then you will need to create a new smaller array
 				Then you can copy the songs to the new array excluding the ones from the artist*/
-		
+		int count = 0;
+		for (Song x : list)
+			if (x != null && x.getArtist() == ar)
+				count += 1;
+		Song[] updateList = new Song[list.length - count];
+		int occurRemIndex = 0;
+		for (Song x: list){
+			if (x != null && x.getArtist() != ar){
+				updateList[occurRemIndex] = x;
+				occurRemIndex++;
+			}
+		}
+		list = updateList;
+		//System.out.println(Arrays.toString(list) + " : updated list after remArtist");
 	}
 	
 	/** method to remove any songs longer than the length specified
@@ -90,13 +122,35 @@ public class PlayList
 	public void removeLength(int length)
 	{
 		// same as method above with creating a smaller array
+		int count = 0;
+		for (Song x : list)
+			if (x != null && x.getLength() == length)
+				count += 1;
+		Song[] updateList = new Song[list.length - count];
+		int occurRemIndex = 0;
+		for (Song x: list){
+			if (x != null && x.getLength() > length){
+				
+				updateList[occurRemIndex] = x;
+			}
+			occurRemIndex++;	
+		}
+		//list = updateList;
 	}
 	
 	/** method to shuffle the order of the playlist - use the card shuffling example from the arrays presentation to help*/
 	public void shuffle()
 	{
 		// use the card shuffling example from the arrays presentation to help you with this
-		
+		int exchange;
+		Song temp;
+		for(int i = 0; i < list.length; i++)
+		{
+		   exchange = i+(int)(Math.random()*(list.length-i));
+		   temp = list[i];
+		   list[i] = list[exchange];
+		   list[exchange] = temp;
+		}
 	}
 	
 	/** equals method to determine if two playlists are equal
