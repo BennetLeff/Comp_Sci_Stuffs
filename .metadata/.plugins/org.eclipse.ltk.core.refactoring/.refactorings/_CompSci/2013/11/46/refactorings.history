@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 4 elements to &apos;Album/src/base&apos;&#x0D;&#x0A;- Original project: &apos;_CompSci&apos;&#x0D;&#x0A;- Destination element: &apos;Album/src/base&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     SongRunner.java&#x0D;&#x0A;     PlayListRunner.java&#x0D;&#x0A;     Song.java&#x0D;&#x0A;     PlayList.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="=Album/src&lt;base" element1="/src&lt;{SongRunner.java" element2="/src&lt;{PlayListRunner.java" element3="/src&lt;{Song.java" element4="/src&lt;{PlayList.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1384528584853" units="4" version="1.0"/>
+</session>

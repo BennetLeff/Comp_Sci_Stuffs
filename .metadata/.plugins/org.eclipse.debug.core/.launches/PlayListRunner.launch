@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/_CompSci/src/PlayListRunner.java"/>
+<listEntry value="/Album/src/base/PlayListRunner.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="PlayListRunner"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="_CompSci"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="base.PlayListRunner"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Album"/>
 </launchConfiguration>
